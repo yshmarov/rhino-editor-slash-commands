@@ -32,6 +32,7 @@ Download the files from the `dist/` folder and include them in your project.
 1. **Add to your importmap** (`config/importmap.rb`):
 
 ```ruby
+# ./bin/importmap pin rhino-editor-slash-commands
 pin "rhino-editor-slash-commands", to: "rhino-editor-slash-commands.esm.js"
 ```
 
