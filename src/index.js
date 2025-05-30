@@ -188,7 +188,6 @@ class RhinoSlashCommands {
 
   // Setup global event listeners
   setupEventListeners() {
-    document.addEventListener("rhino-before-initialize", this.configureRhinoEditor.bind(this));
     document.addEventListener("rhino-initialize", this.onRhinoInitialized.bind(this));
     document.addEventListener('DOMContentLoaded', this.initializeExistingEditors.bind(this));
     document.addEventListener('turbo:load', () => {
@@ -204,18 +203,6 @@ class RhinoSlashCommands {
         }
       }
     });
-  }
-
-  // Configure rhino-editor before initialization
-  configureRhinoEditor(e) {
-    const editor = e.target;
-    
-    editor.starterKitOptions = {
-      ...editor.starterKitOptions,
-      rhinoPlaceholder: {
-        placeholder: this.options.placeholder
-      }
-    };
   }
 
   // Setup after rhino-editor is initialized
