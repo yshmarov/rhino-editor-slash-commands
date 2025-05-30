@@ -1,0 +1,42 @@
+{
+  "name": "rhino-editor-slash-commands",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Notion-like slash commands for rhino-editor with modern UI and comprehensive formatting options",
+  "main": "dist/rhino-editor-slash-commands.js",
+  "module": "src/index.js",
+  "files": [
+    "dist/",
+    "src/",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "rollup -c",
+    "dev": "rollup -c -w",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "rhino-editor",
+    "slash-commands",
+    "wysiwyg",
+    "editor",
+    "rails",
+    "actiontext",
+    "notion",
+    "tiptap"
+  ],
+  "author": "Yaroslav Shmarov",
+  "license": "MIT",
+  "devDependencies": {
+    "rollup": "^4.0.0",
+    "@rollup/plugin-terser": "^0.4.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yshmarov/rhino-editor-slash-commands.git"
+  },
+  "bugs": {
+    "url": "https://github.com/yshmarov/rhino-editor-slash-commands/issues"
+  },
+  "homepage": "https://github.com/yshmarov/rhino-editor-slash-commands#readme"
+}

@@ -1,0 +1,130 @@
+/**
+ * ========================================================================
+ * RHINO EDITOR SLASH COMMANDS STYLING
+ * ========================================================================
+ * 
+ * This stylesheet provides styling for the Notion-like slash commands
+ * implementation for rhino-editor. It includes placeholder text styling,
+ * link highlighting, and the dropdown menu appearance.
+ */
+
+/* ===== CSS CUSTOM PROPERTIES ===== */
+:root {
+  /* Colors - Rhino Editor Integration */
+  --rhino-placeholder-color: #9ca3af;
+  --rhino-link-color: #2563eb;
+  --rhino-link-hover-color: #1d4ed8;
+  --rhino-link-visited-color: #7c3aed;
+  
+  /* Dropdown colors */
+  --dropdown-bg: #ffffff;
+  --dropdown-border: #e5e7eb;
+  --dropdown-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  --dropdown-item-hover-bg: #f3f4f6;
+  --dropdown-item-selected-bg: #3b82f6;
+  --dropdown-item-selected-text: #ffffff;
+  
+  /* Spacing and sizing */
+  --dropdown-border-radius: 8px;
+  --dropdown-max-height: 200px;
+  --dropdown-min-width: 200px;
+  --dropdown-z-index: 1000;
+  
+  /* Typography */
+  --font-family-system: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+/* ===== RHINO EDITOR STYLES ===== */
+
+/**
+ * Placeholder styling for empty paragraphs
+ */
+rhino-editor .ProseMirror p.is-empty::before,
+rhino-editor .ProseMirror p:empty::before {
+  content: "Write something or type / for options";
+  color: var(--rhino-placeholder-color);
+  pointer-events: none;
+  float: left;
+  height: 0;
+  font-style: italic;
+}
+
+/**
+ * Hide placeholder when editor is not focused
+ */
+rhino-editor .ProseMirror:not(:focus-within) p.is-empty::before,
+rhino-editor .ProseMirror:not(:focus-within) p:empty::before {
+  display: none;
+}
+
+/**
+ * Link styling for rhino-editor content
+ */
+rhino-editor .ProseMirror a,
+rhino-editor .trix-content a {
+  color: var(--rhino-link-color);
+  text-decoration: underline;
+  cursor: pointer;
+  transition: color 0.15s ease;
+}
+
+rhino-editor .ProseMirror a:hover,
+rhino-editor .trix-content a:hover {
+  color: var(--rhino-link-hover-color);
+}
+
+rhino-editor .ProseMirror a:visited,
+rhino-editor .trix-content a:visited {
+  color: var(--rhino-link-visited-color);
+}
+
+/* ===== SLASH COMMANDS DROPDOWN ===== */
+
+/**
+ * Main dropdown container
+ */
+.slash-commands-dropdown {
+  position: absolute;
+  background: var(--dropdown-bg);
+  border: 1px solid var(--dropdown-border);
+  border-radius: var(--dropdown-border-radius);
+  box-shadow: var(--dropdown-shadow);
+  z-index: var(--dropdown-z-index);
+  max-height: var(--dropdown-max-height);
+  overflow-y: auto;
+  min-width: var(--dropdown-min-width);
+  display: none;
+  font-family: var(--font-family-system);
+}
+
+/**
+ * Individual command items in the dropdown
+ */
+.slash-command-item {
+  padding: 8px 12px;
+  cursor: pointer;
+  border-bottom: 1px solid #f3f4f6;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: background-color 0.15s ease;
+}
+
+.slash-command-item:last-child {
+  border-bottom: none;
+}
+
+/**
+ * Hover state styling
+ */
+.slash-command-item:hover:not(.selected) {
+  background-color: var(--dropdown-item-hover-bg);
+}
+
+/**
+ * Selected state for keyboard navigation
+ */
+.slash-command-item.selected {
+  background-color: var(--dropdown-item-selected-bg);
+  color: var(--dropdown-item-selected-text);
+} 
