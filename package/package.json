@@ -4,11 +4,13 @@
   "type": "module",
   "description": "Notion-like slash commands for rhino-editor with modern UI and comprehensive formatting options",
   "main": "dist/rhino-editor-slash-commands.js",
-  "module": "src/index.js",
+  "module": "dist/rhino-editor-slash-commands.esm.js",
+  "types": "src/index.d.ts",
   "files": [
     "dist/",
     "src/",
-    "README.md"
+    "README.md",
+    "LICENSE"
   ],
   "scripts": {
     "build": "rollup -c",

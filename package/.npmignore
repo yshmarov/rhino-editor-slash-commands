@@ -1,0 +1,26 @@
+# Development files
+rollup.config.js
+.DS_Store
+
+# Git
+.git/
+.gitignore
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Logs
+*.log
+npm-debug.log*
+
+# Dependencies (not needed in published package)
+node_modules/
+
+# Test files
+test/
+tests/
+*.test.js
+*.spec.js 
